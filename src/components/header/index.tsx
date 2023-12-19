@@ -1,38 +1,60 @@
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import { headerStyles, headerTransplantStyles } from './styles';
+import { AppBar, Box, Toolbar, Typography, Button } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import {
+    headerStyles,
+    headerTransplantStyles,
+    navbarContentContainer,
+    projectTitleStyles,
+} from "./styles";
+import { ANGEBOT_TEXT, HOME_TEXT, LATAKIA_GMBH } from "../../assets/text";
 
-export default function ButtonAppBar() {
-    const trigger = useScrollTrigger({
+const ButtonAppBar = () => {
+
+    const matchesMobileSize = useMediaQuery("(max-width:462px)");
+    const scrollYIsZero = useScrollTrigger({
         disableHysteresis: true,
         threshold: 0,
     });
 
     return (
         <Box sx={ { flexGrow: 1 } }>
-            <AppBar sx={ trigger ? headerStyles : headerTransplantStyles } position="fixed">
-                <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={ { mr: 2 } }
+            <AppBar
+                sx={ scrollYIsZero ? headerStyles : headerTransplantStyles }
+                position="fixed"
+            >
+                <Toolbar sx={ navbarContentContainer }>
+                    <Box
+                        component="img"
+                        sx={ matchesMobileSize ? { width: "50px" } : { width: "80px" } }
+                        src="project-image.jpg"
+                        alt="project-logo"
+                    />
+                    <Typography
+                        sx={
+                            matchesMobileSize
+                                ? projectTitleStyles
+                                : { fontSize: "24px", }
+                        }
+                        component="div"
                     >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" component="div" sx={ { flexGrow: 1 } }>
-                        News
+                        { LATAKIA_GMBH }
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    <Box>
+                        <Button sx={
+                            matchesMobileSize
+                                ? { fontSize: "12px", }
+                                : { fontSize: "17px", }
+                        } color="inherit">{ HOME_TEXT }</Button>
+                        <Button sx={
+                            matchesMobileSize
+                                ? { fontSize: "12px", }
+                                : { fontSize: "17px", }
+                        } color="inherit">{ ANGEBOT_TEXT }</Button>
+                    </Box>
                 </Toolbar>
             </AppBar>
         </Box>
     );
-}
+};
+export default ButtonAppBar;
