@@ -5,8 +5,6 @@ const LandingPage = () => {
     return (
         <div>
             <SwipeableTextMobileStepper />
-            <SwipeableTextMobileStepper />
-
         </div>
     )
 }
