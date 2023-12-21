@@ -53,3 +53,14 @@ export const servicesOverviewData = [
         description: "Wir bieten umfassende Personenbeförderungsdienste an, von der Beförderung von Personen mit öffentlichen Verkehrsmitteln bis hin zur Vermittlung von Taxiunternehmen, um Ihnen eine bequeme und sichere Reise zu ermöglichen."
     },
 ];
+
+export const formDataObject = {
+    name: '',
+    lastName: '',
+    phoneNumber: '',
+    email: '',
+    serviceType: '',
+    description: '',
+};
+
+export const servicesOptions = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];

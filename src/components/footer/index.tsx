@@ -1,10 +1,10 @@
-import { Grid, Typography, Link, Divider, Box } from "@mui/material";
+import { Box, Typography, Link, Divider } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import {
     companyTitleStyles,
-    footerGridStyles,
     footerMailContainerStyles,
+    footerGridStyles,
     allRightsReservedContainerStyles,
     allRightsReservedStyles,
     dividerStyles,
@@ -28,13 +28,18 @@ import {
 } from "../../assets/text";
 
 const Footer = () => {
-
     const matchesMobileSize = useMediaQuery("(max-width:462px)");
 
     return (
         <Box id="main-container" component="footer" sx={ footerMailContainerStyles }>
-            <Grid container spacing={ 3 }>
-                <Grid sx={ footerGridStyles } item xs={ 12 } md={ 4 }>
+            <Box sx={ footerGridStyles }>
+                <Box sx={ {
+                    flex: 1.1, display: "flex",
+                    "@media (max-width: 639px)": {
+                        marginBottom: "20px",
+                    },
+
+                } }>
                     <Box
                         component="img"
                         sx={ matchesMobileSize ? { width: "50px" } : { width: "80px" } }
@@ -44,36 +49,29 @@ const Footer = () => {
                     <Typography variant="h5" gutterBottom sx={ companyTitleStyles }>
                         { LATAKIA_GMBH }
                     </Typography>
-                </Grid>
-                <Grid item xs={ 12 } md={ 4 }>
-                    <Typography
-                        sx={ familyFontCursive }
-                        variant="body1"
-                    >
+                </Box>
+                <Box>
+                    <Typography sx={ familyFontCursive } variant="body1">
                         <strong>{ CONTACT_TEXT }:</strong> { PHONE_NUMBER }
                     </Typography>
-                    <Typography
-                        sx={ familyFontCursive }
-                        variant="body1"
-                    >
+                    <Typography sx={ familyFontCursive } variant="body1">
                         <strong>{ ADDRESS_TEXT }:</strong> { ADDRESS_DETAILS_TEXT }
                     </Typography>
-                    <Typography
-                        sx={ familyFontCursive }
-                        variant="body1"
-                    >
+                    <Typography sx={ familyFontCursive } variant="body1">
                         <strong>{ EMAIL_TEXT }:</strong>{ " " }
                         <Link href={ WEBSITE_OWNER_EMAIL_TEXT } sx={ { color: "#bbdefb" } }>
                             { COMPANY_EMAIL }
                         </Link>
                     </Typography>
-                </Grid>
-                <Grid item xs={ 12 } md={ 4 } >
-                    <Typography sx={ allRightsReservedStyles } variant="body2">
-                        &copy; { new Date().getFullYear() } { RIGHTS_RESERVED_TEXT }
-                    </Typography>
-                </Grid>
-            </Grid>
+                </Box>
+                <Box sx={ { flex: 1 } }>
+                </Box>
+            </Box>
+            <Box sx={ allRightsReservedContainerStyles }>
+                <Typography variant="body2" sx={ allRightsReservedStyles }>
+                    &copy; { new Date().getFullYear() } { RIGHTS_RESERVED_TEXT }
+                </Typography>
+            </Box>
             <Divider sx={ dividerStyles } />
             <Typography variant="body2" sx={ designedByStyles }>
                 { DESIGNED_BY_TEXT }{ " " }

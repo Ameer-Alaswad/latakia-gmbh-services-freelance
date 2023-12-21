@@ -9,7 +9,7 @@ export const containerStyle = {
 };
 
 export const backgroundImageStyle = {
-    height: '400px',
+    height: '600px',
     backgroundImage: `url(${backgroundImageUrl})`,
     backgroundSize: 'cover',
     display: 'flex',

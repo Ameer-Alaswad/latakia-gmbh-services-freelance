@@ -1,144 +1,167 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import Typography from '@material-ui/core/Typography';
-
+import { Button, TextField, Select, MenuItem, InputLabel, FormControl, Box, Typography } from '@mui/material';
+import emailjs from '@emailjs/browser';
 interface FormData {
     name: string;
     lastName: string;
-    phoneNumber: string;
     email: string;
-    serviceType: string;
+    phoneNumber: string;
+    service: string;
     description: string;
 }
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        // padding: theme.spacing(3),
-
-    },
-    formContainer: {
-        height: "600px",
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        width: '50%',
-        gap: theme.spacing(2), // Add spacing between inputs
-    },
-    formControl: {
-        margin: theme.spacing(1),
-        minWidth: 120,
-    },
-    button: {
-        marginTop: theme.spacing(2),
-    },
-}));
-
-const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
-
-const SimpleForm: React.FC = () => {
-    const classes = useStyles();
+const MyForm: React.FC = () => {
     const [formData, setFormData] = useState<FormData>({
         name: '',
         lastName: '',
-        phoneNumber: '',
         email: '',
-        serviceType: '',
+        phoneNumber: '',
+        service: '',
         description: '',
     });
 
-    const handleChange = (field: keyof FormData) => (
-        event: React.ChangeEvent<{ value: unknown }>
-    ) => {
-        setFormData({ ...formData, [field]: event.target.value as string });
+    const handleChange = (key: keyof FormData, value: string) => {
+        setFormData((prevData) => ({
+            ...prevData,
+            [key]: value,
+        }));
     };
 
-    const handleSubmit = () => {
-        // Log the form data
-        console.log(formData);
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        const templateParams = {
+            name: formData.name,
+            lastName: formData.lastName,
+            email: formData.email,
+            phoneNumber: formData.phoneNumber,
+            service: formData.service,
+            description: formData.description,
+        };
+
+        try {
+            // Use your EmailJS template ID, service ID, and user ID
+            const response = await emailjs.send(
+                'service_56p4lg1',
+                'template_lbfhy68',
+                templateParams,
+                'WpgTXMD0k0R12bTnt'
+            );
+
+            console.log('Email sent successfully', response);
+        } catch (error) {
+            console.error('Error sending email', error);
+        }
     };
 
     return (
-        <div className={ classes.root }>
-            <Typography variant="h5">Service Request Form</Typography>
-            <div className={ classes.formContainer }>
+        <Box sx={ {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: "center"
+        } }>
+
+            <Box sx={ {
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: "center",
+                width: "600px",
+                "@media (max-width: 866px)": {
+                    width: "90%",
+
+                },
+
+            } } component="form">
+                <Typography sx={ {
+                    color: "#303030",
+                    fontFamily: "'monospace','Arial', sans-serif",
+                    fontWeight: "bold",
+                    marginTop: "80px",
+                    marginBottom: "50px"
+                } } variant="h4">KOTAKTIEREN UNS!</Typography>
                 <TextField
+                    required
                     label="Name"
+                    fullWidth
                     value={ formData.name }
-                    onChange={ handleChange('name') }
+                    onChange={ (e) => handleChange('name', e.target.value) }
                     margin="normal"
-                    variant="outlined"
-                    fullWidth
                 />
                 <TextField
+                    required
+
                     label="Last Name"
+                    fullWidth
                     value={ formData.lastName }
-                    onChange={ handleChange('lastName') }
+                    onChange={ (e) => handleChange('lastName', e.target.value) }
                     margin="normal"
-                    variant="outlined"
-                    fullWidth
                 />
                 <TextField
-                    label="Phone Number"
-                    value={ formData.phoneNumber }
-                    onChange={ handleChange('phoneNumber') }
-                    margin="normal"
-                    variant="outlined"
-                    fullWidth
-                />
-                <TextField
+                    required
+
                     label="Email"
-                    value={ formData.email }
-                    onChange={ handleChange('email') }
-                    margin="normal"
-                    variant="outlined"
                     fullWidth
+                    type="email"
+                    value={ formData.email }
+                    onChange={ (e) => handleChange('email', e.target.value) }
+                    margin="normal"
                 />
-                <FormControl className={ classes.formControl } fullWidth>
-                    <InputLabel id="service-type-label">Service Type</InputLabel>
+                <TextField
+                    required
+
+                    label="Phone Number"
+                    fullWidth
+                    type="tel"
+                    value={ formData.phoneNumber }
+                    onChange={ (e) => handleChange('phoneNumber', e.target.value) }
+                    margin="normal"
+                />
+                <FormControl fullWidth margin="normal">
+                    <InputLabel id="service-label">Service</InputLabel>
                     <Select
-                        labelId="service-type-label"
-                        value={ formData.serviceType }
-                        onChange={ handleChange('serviceType') }
-                        variant="outlined"
-                        fullWidth
+                        required
+                        labelId="service-label"
+                        label="Service"
+                        value={ formData.service }
+                        onChange={ (e) => handleChange('service', e.target.value as string) }
                     >
-                        { options.map((option, index) => (
-                            <MenuItem key={ index } value={ option }>
-                                { option }
-                            </MenuItem>
-                        )) }
+                        <MenuItem value="service1">Service 1</MenuItem>
+                        <MenuItem value="service2">Service 2</MenuItem>
+                        <MenuItem value="service3">Service 3</MenuItem>
+                        <MenuItem value="service4">Service 4</MenuItem>
+                        <MenuItem value="service5">Service 5</MenuItem>
                     </Select>
                 </FormControl>
-                <TextField
-                    label="Description"
-                    multiline
-                    rows={ 4 }
-                    value={ formData.description }
-                    onChange={ handleChange('description') }
-                    margin="normal"
-                    variant="outlined"
-                    fullWidth
-                />
-            </div>
-            <Button
-                variant="contained"
-                color="primary"
-                className={ classes.button }
-                onClick={ handleSubmit }
-            >
-                Submit
-            </Button>
-        </div>
+                <FormControl fullWidth margin="normal">
+                    <TextField
+                        required
+                        minRows={ 4 }
+                        multiline
+                        placeholder="Description"
+                        value={ formData.description }
+                        onChange={ (e) => handleChange('description', e.target.value) }
+                    />
+                </FormControl>
+                <Button sx={ {
+                    backgroundColor: '#3c52b2',
+                    color: '#fff',
+                    border: '2px solid #3c52b2',
+                    borderRadius: '20px',
+                    padding: '10px 30px',
+                    marginTop: "20px",
+                    fontFamily: "'monospace','Arial', sans-serif",
+                    '&:hover': {
+                        backgroundColor: 'transparent',
+                        border: '2px solid #fff',
+                    },
+                    transition: 'background-color 0.5s ease, border-color 0.5s ease',
+                } } type='submit' variant="contained" color="primary" onClick={ handleSubmit }>
+                    Senden
+                </Button>
+            </Box>
+        </Box>
+
     );
 };
 
-export default SimpleForm;
+export default MyForm;

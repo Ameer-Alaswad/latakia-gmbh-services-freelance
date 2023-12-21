@@ -7,28 +7,33 @@ export const footerMailContainerStyles = {
     fontFamily: "Pacifico, sans-serif",
     transition: "background 0.5s",
     marginTop: "50px",
+
     "&:hover": {
         background: "linear-gradient(to right, #4e4376, #2b5876)",
     },
 };
 
 export const footerGridStyles = {
-    display: "flex", alignItems: "center",
+    display: "flex", alignItems: "center", flexWrap: "wrap",
 };
 export const companyTitleStyles = {
     color: "#ffa726",
     fontFamily: "cursive, sans-serif",
     marginLeft: "10px",
+    alignSelf: "center"
 };
 export const allRightsReservedContainerStyles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-end",
+    "@media (max-width: 639px)": {
+        marginTop: "20px",
+    },
 };
 export const allRightsReservedStyles = {
     fontFamily: "cursive, sans-serif",
-    marginTop: "auto",
-    alignSelf: "flex-end"
+    marginTop: "10px",
+
 };
 export const dividerStyles = { backgroundColor: "#444", marginY: "1rem" };
 export const designedByStyles = {

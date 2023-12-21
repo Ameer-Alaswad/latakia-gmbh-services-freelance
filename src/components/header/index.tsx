@@ -1,6 +1,8 @@
 import { AppBar, Box, Toolbar, Typography, Button } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
+import { useNavigate } from 'react-router-dom';
+
 import {
     headerStyles,
     headerTransplantStyles,
@@ -10,7 +12,7 @@ import {
 import { ANGEBOT_TEXT, HOME_TEXT, LATAKIA_GMBH } from "../../assets/text";
 
 const ButtonAppBar = () => {
-
+    const navigate = useNavigate();
     const matchesMobileSize = useMediaQuery("(max-width:462px)");
     const scrollYIsZero = useScrollTrigger({
         disableHysteresis: true,
@@ -41,12 +43,12 @@ const ButtonAppBar = () => {
                         { LATAKIA_GMBH }
                     </Typography>
                     <Box>
-                        <Button sx={
+                        <Button onClick={ () => navigate("/") } sx={
                             matchesMobileSize
                                 ? { fontSize: "12px", }
                                 : { fontSize: "17px", }
                         } color="inherit">{ HOME_TEXT }</Button>
-                        <Button sx={
+                        <Button onClick={ () => navigate("/contact-us") } sx={
                             matchesMobileSize
                                 ? { fontSize: "12px", }
                                 : { fontSize: "17px", }
