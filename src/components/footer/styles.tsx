@@ -6,7 +6,7 @@ export const footerMailContainerStyles = {
     boxShadow: "0px 0px 15px 0px rgba(0,0,0,0.2)",
     fontFamily: "Pacifico, sans-serif",
     transition: "background 0.5s",
-
+    marginTop: "50px",
     "&:hover": {
         background: "linear-gradient(to right, #4e4376, #2b5876)",
     },
@@ -28,6 +28,7 @@ export const allRightsReservedContainerStyles = {
 export const allRightsReservedStyles = {
     fontFamily: "cursive, sans-serif",
     marginTop: "auto",
+    alignSelf: "flex-end"
 };
 export const dividerStyles = { backgroundColor: "#444", marginY: "1rem" };
 export const designedByStyles = {

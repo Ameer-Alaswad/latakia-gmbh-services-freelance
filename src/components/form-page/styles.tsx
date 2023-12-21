@@ -3,7 +3,9 @@ const backgroundImageUrl = 'cleaning.jpg';
 export const containerStyle = {
     display: "flex",
     flexDirection: "column",
-    height: "100vh"
+    alignItems: "space-between",
+    justifyContent: "space-between",
+
 };
 
 export const backgroundImageStyle = {
