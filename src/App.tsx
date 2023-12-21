@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ButtonAppBar from "./components/header";
 import LandingPage from "./components/landing-page";
+import Footer from "./components/footer";
 const App = () => {
   return (
     <div>
@@ -10,6 +11,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={ <LandingPage /> } />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
