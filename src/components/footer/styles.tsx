@@ -6,12 +6,15 @@ export const footerMailContainerStyles = {
     boxShadow: "0px 0px 15px 0px rgba(0,0,0,0.2)",
     fontFamily: "Pacifico, sans-serif",
     transition: "background 0.5s",
+
     "&:hover": {
         background: "linear-gradient(to right, #4e4376, #2b5876)",
     },
 };
 
-export const footerGridStyles = { display: "flex", alignItems: "center" };
+export const footerGridStyles = {
+    display: "flex", alignItems: "center",
+};
 export const companyTitleStyles = {
     color: "#ffa726",
     fontFamily: "cursive, sans-serif",

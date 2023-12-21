@@ -1,5 +1,6 @@
 import { Grid, Typography, Link, Divider, Box } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
+
 import {
     companyTitleStyles,
     footerGridStyles,
@@ -27,10 +28,11 @@ import {
 } from "../../assets/text";
 
 const Footer = () => {
+
     const matchesMobileSize = useMediaQuery("(max-width:462px)");
 
     return (
-        <Box component="footer" sx={ footerMailContainerStyles }>
+        <Box id="main-container" component="footer" sx={ footerMailContainerStyles }>
             <Grid container spacing={ 3 }>
                 <Grid sx={ footerGridStyles } item xs={ 12 } md={ 4 }>
                     <Box
