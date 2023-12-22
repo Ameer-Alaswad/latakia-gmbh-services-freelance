@@ -146,13 +146,13 @@ const MyForm: React.FC = () => {
                         value={ formData.service }
                         onChange={ (e) => handleChange("service", e.target.value as string) }
                     >
-                        <MenuItem value="service1">{ CLEANING_SERVICE_TEXT }</MenuItem>
-                        <MenuItem value="service2">{ LOGISTICS_SERVICES_TEXT }</MenuItem>
-                        <MenuItem value="service3">{ SECCURITY_SERVICES_TEXT }</MenuItem>
-                        <MenuItem value="service4">
+                        <MenuItem value={ CLEANING_SERVICE_TEXT }>{ CLEANING_SERVICE_TEXT }</MenuItem>
+                        <MenuItem value={ LOGISTICS_SERVICES_TEXT }>{ LOGISTICS_SERVICES_TEXT }</MenuItem>
+                        <MenuItem value={ SECCURITY_SERVICES_TEXT }>{ SECCURITY_SERVICES_TEXT }</MenuItem>
+                        <MenuItem value={ PERSONAL_TRANSPORT_SERVICES_TEXT }>
                             { PERSONAL_TRANSPORT_SERVICES_TEXT }
                         </MenuItem>
-                        <MenuItem value="service5">{ OTHER_TEXT }</MenuItem>
+                        <MenuItem value={ OTHER_TEXT }>{ OTHER_TEXT }</MenuItem>
                     </Select>
                 </FormControl>
                 <FormControl fullWidth margin="normal">
