@@ -59,7 +59,7 @@ const MyForm: React.FC = () => {
     };
 
     const handleSubmit = async (
-        e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+        e: React.FormEvent<HTMLFormElement>
     ) => {
         e.preventDefault();
 
@@ -99,7 +99,7 @@ const MyForm: React.FC = () => {
 
     return (
         <Box sx={ contactFormMainContainerStyles }>
-            <Box sx={ contactFormStyles } component="form">
+            <Box sx={ contactFormStyles } component="form" onSubmit={ (e) => handleSubmit(e) }>
                 <Typography sx={ contactUsTitleStyles } variant="h4">
                     { CONTACT_US_TEXT }
                 </Typography>
@@ -170,7 +170,6 @@ const MyForm: React.FC = () => {
                     type="submit"
                     variant="contained"
                     color="primary"
-                    onClick={ (e) => handleSubmit(e) }
                 >
                     { SEND_REQUEST_TEXT }
                 </Button>
