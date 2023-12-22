@@ -16,10 +16,13 @@ import {
     angebotButtonStyles,
 } from "./styles";
 import { ANGEBOT_TEXT, NEXT_TEXT } from "../../assets/text";
+import { useNavigate } from 'react-router-dom';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 function SwipeableTextMobileStepper() {
+    const navigate = useNavigate();
+
     const theme = useTheme();
     const [activeStep, setActiveStep] = React.useState(0);
     const maxSteps = images.length;
@@ -61,7 +64,7 @@ function SwipeableTextMobileStepper() {
                                     <Typography sx={ carouselTextTwoStyles }>
                                         { step?.textTwo }
                                     </Typography>
-                                    <Button sx={ angebotButtonStyles }>{ ANGEBOT_TEXT }</Button>
+                                    <Button onClick={ () => navigate("/contact-us") } sx={ angebotButtonStyles }>{ ANGEBOT_TEXT }</Button>
                                 </Box>
                             </Box>
                         ) : null }
