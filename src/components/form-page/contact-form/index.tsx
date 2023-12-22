@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Button, TextField, Select, MenuItem, InputLabel, FormControl, Box, Typography } from '@mui/material';
+import { toast } from "react-toastify";
 import emailjs from '@emailjs/browser';
+import 'react-toastify/dist/ReactToastify.css';
 interface FormData {
     name: string;
     lastName: string;
@@ -27,8 +29,9 @@ const MyForm: React.FC = () => {
         }));
     };
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
+    const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        e.preventDefault();
+
         const templateParams = {
             name: formData.name,
             lastName: formData.lastName,
@@ -46,9 +49,12 @@ const MyForm: React.FC = () => {
                 templateParams,
                 'WpgTXMD0k0R12bTnt'
             );
-
+            toast.success("Wir haben Ihre Anfrage erhalten, jemand wird Ihnen bald antworten")
             console.log('Email sent successfully', response);
+            console.log(templateParams);
+
         } catch (error) {
+            toast.error("Error sending email")
             console.error('Error sending email', error);
         }
     };
@@ -71,7 +77,7 @@ const MyForm: React.FC = () => {
 
                 },
 
-            } } component="form">
+            } } component="form" >
                 <Typography sx={ {
                     color: "#303030",
                     fontFamily: "'monospace','Arial', sans-serif",
@@ -155,7 +161,7 @@ const MyForm: React.FC = () => {
                         border: '2px solid #fff',
                     },
                     transition: 'background-color 0.5s ease, border-color 0.5s ease',
-                } } type='submit' variant="contained" color="primary" onClick={ handleSubmit }>
+                } } type='submit' variant="contained" color="primary" onClick={ (e) => handleSubmit(e) }>
                     Senden
                 </Button>
             </Box>
