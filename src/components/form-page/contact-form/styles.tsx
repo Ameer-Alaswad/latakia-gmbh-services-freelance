@@ -35,6 +35,7 @@ export const contactFormSubmitButtonStyles = {
     '&:hover': {
         backgroundColor: 'transparent',
         border: '2px solid #fff',
+        color: "black"
     },
     transition: 'background-color 0.5s ease, border-color 0.5s ease',
 } 

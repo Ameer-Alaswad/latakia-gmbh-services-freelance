@@ -2,7 +2,7 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import { servicesOverviewData } from "../../assets";
-import { Box, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import {
     serviceImageDescriptionStyles,
     serviceImageItemContainerStyles,
@@ -12,12 +12,16 @@ import {
     servicesTitleStyles,
 } from "./styles";
 import { SERVICES_TITLE_TEXT } from "../../assets/text";
+import { dividerStyles } from "../landing-page/styles";
 
 export default function TitlebarBelowImageList() {
 
     return (
         <Box sx={ servicesImagesListMainContainerStyles }>
+
             <Typography sx={ servicesTitleStyles }>{ SERVICES_TITLE_TEXT }</Typography>
+            <Divider sx={ dividerStyles } />
+
             <ImageList sx={ servicesImagesListContainer }>
                 { servicesOverviewData.map((item) => (
                     <ImageListItem
@@ -33,6 +37,7 @@ export default function TitlebarBelowImageList() {
                             alt={ item?.title }
                             loading="lazy"
                         />
+
                         <ImageListItemBar
                             sx={ serviceImageItemContainerStyles }
                             title={

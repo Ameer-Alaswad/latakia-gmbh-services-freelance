@@ -9,7 +9,7 @@ import {
     navbarContentContainer,
     projectTitleStyles,
 } from "./styles";
-import { ANGEBOT_TEXT, HOME_TEXT, LATAKIA_GMBH } from "../../assets/text";
+import { CONTACT_US_TEXT_IN_HEADER, HOME_TEXT, LATAKIA_GMBH } from "../../assets/text";
 
 const ButtonAppBar = () => {
     const navigate = useNavigate();
@@ -52,7 +52,7 @@ const ButtonAppBar = () => {
                             matchesMobileSize
                                 ? { fontSize: "12px", }
                                 : { fontSize: "17px", }
-                        } color="inherit">{ ANGEBOT_TEXT }</Button>
+                        } color="inherit">{ CONTACT_US_TEXT_IN_HEADER }</Button>
                     </Box>
                 </Toolbar>
             </AppBar>

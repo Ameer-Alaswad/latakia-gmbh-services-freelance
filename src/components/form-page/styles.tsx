@@ -1,4 +1,4 @@
-const backgroundImageUrl = 'cleaning.jpg';
+const backgroundImageUrl = 'contact-us.jpg';
 
 export const containerStyle = {
     display: "flex",
@@ -9,7 +9,7 @@ export const containerStyle = {
 };
 
 export const backgroundImageStyle = {
-    height: '600px',
+    height: '700px',
     backgroundImage: `url(${backgroundImageUrl})`,
     backgroundSize: 'cover',
     display: 'flex',
