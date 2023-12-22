@@ -23,6 +23,7 @@ import {
     CONTACT_FORM_ERROR_MESSAGE,
     CONTACT_FORM_SUCCESS_MESSAGE,
     CONTACT_US_TEXT,
+    LINKS_NOW_ALLOWED_MESSAGE,
     LOGISTICS_SERVICES_TEXT,
     OTHER_TEXT,
     PERSONAL_TRANSPORT_SERVICES_TEXT,
@@ -67,7 +68,7 @@ const MyForm: React.FC = () => {
         );
 
         if (containsLink) {
-            toast.error("Links are not allowed in the form fields");
+            toast.error(LINKS_NOW_ALLOWED_MESSAGE);
             return;
         }
 
