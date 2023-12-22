@@ -54,13 +54,5 @@ export const servicesOverviewData = [
     },
 ];
 
-export const formDataObject = {
-    name: '',
-    lastName: '',
-    phoneNumber: '',
-    email: '',
-    serviceType: '',
-    description: '',
-};
 
 export const servicesOptions = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
