@@ -23,10 +23,10 @@ import {
     CONTACT_FORM_ERROR_MESSAGE,
     CONTACT_FORM_SUCCESS_MESSAGE,
     CONTACT_US_TEXT,
+    Car_rental_entrepreneur,
     LINKS_NOW_ALLOWED_MESSAGE,
     LOGISTICS_SERVICES_TEXT,
     OTHER_TEXT,
-    PERSONAL_TRANSPORT_SERVICES_TEXT,
     SECCURITY_SERVICES_TEXT,
     SEND_REQUEST_TEXT,
     SERVICE_TEXT,
@@ -51,6 +51,15 @@ const MyForm: React.FC = () => {
         description: "",
     });
 
+    const isEmailValid = (email: string): boolean => {
+        // Regular expression for basic email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Check if the email matches the regular expression
+        return emailRegex.test(email);
+    };
+
+
     const handleChange = (key: keyof FormData, value: string) => {
         setFormData((prevData) => ({
             ...prevData,
@@ -59,7 +68,7 @@ const MyForm: React.FC = () => {
     };
 
     const handleSubmit = async (
-        e: React.FormEvent<HTMLFormElement>
+        e: React.MouseEvent<HTMLButtonElement, MouseEvent>
     ) => {
         e.preventDefault();
 
@@ -69,6 +78,10 @@ const MyForm: React.FC = () => {
 
         if (containsLink) {
             toast.error(LINKS_NOW_ALLOWED_MESSAGE);
+            return;
+        }
+        if (!isEmailValid(formData.email)) {
+            toast.error("Please enter a valid email address.");
             return;
         }
 
@@ -84,10 +97,18 @@ const MyForm: React.FC = () => {
         try {
             const response = await emailjs.send(
                 "service_56p4lg1",
-                "template_lbfhy68",
+                "template_8d22j08",
                 templateParams,
                 "WpgTXMD0k0R12bTnt"
             );
+            setFormData({
+                name: "",
+                lastName: "",
+                email: "",
+                phoneNumber: "",
+                service: "",
+                description: "",
+            })
             toast.success(CONTACT_FORM_SUCCESS_MESSAGE);
             console.log("Email sent successfully", response);
             console.log(templateParams);
@@ -99,7 +120,7 @@ const MyForm: React.FC = () => {
 
     return (
         <Box sx={ contactFormMainContainerStyles }>
-            <Box sx={ contactFormStyles } component="form" onSubmit={ (e) => handleSubmit(e) }>
+            <Box sx={ contactFormStyles } component="form">
                 <Typography sx={ contactUsTitleStyles } variant="h4">
                     { CONTACT_US_TEXT }
                 </Typography>
@@ -146,13 +167,13 @@ const MyForm: React.FC = () => {
                         value={ formData.service }
                         onChange={ (e) => handleChange("service", e.target.value as string) }
                     >
-                        <MenuItem value={ CLEANING_SERVICE_TEXT }>{ CLEANING_SERVICE_TEXT }</MenuItem>
-                        <MenuItem value={ LOGISTICS_SERVICES_TEXT }>{ LOGISTICS_SERVICES_TEXT }</MenuItem>
-                        <MenuItem value={ SECCURITY_SERVICES_TEXT }>{ SECCURITY_SERVICES_TEXT }</MenuItem>
-                        <MenuItem value={ PERSONAL_TRANSPORT_SERVICES_TEXT }>
-                            { PERSONAL_TRANSPORT_SERVICES_TEXT }
+                        <MenuItem value="service1">{ CLEANING_SERVICE_TEXT }</MenuItem>
+                        <MenuItem value="service2">{ LOGISTICS_SERVICES_TEXT }</MenuItem>
+                        <MenuItem value="service3">{ SECCURITY_SERVICES_TEXT }</MenuItem>
+                        <MenuItem value="service4">
+                            { Car_rental_entrepreneur }
                         </MenuItem>
-                        <MenuItem value={ OTHER_TEXT }>{ OTHER_TEXT }</MenuItem>
+                        <MenuItem value="service5">{ OTHER_TEXT }</MenuItem>
                     </Select>
                 </FormControl>
                 <FormControl fullWidth margin="normal">
@@ -170,6 +191,7 @@ const MyForm: React.FC = () => {
                     type="submit"
                     variant="contained"
                     color="primary"
+                    onClick={ (e) => handleSubmit(e) }
                 >
                     { SEND_REQUEST_TEXT }
                 </Button>

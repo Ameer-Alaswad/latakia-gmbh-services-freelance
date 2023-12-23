@@ -13,10 +13,7 @@ import {
     familyFontCursive,
 } from "./styles";
 import {
-    ADDRESS_DETAILS_TEXT,
-    ADDRESS_TEXT,
     COMPANY_EMAIL,
-    CONTACT_TEXT,
     DESIGNED_BY_TEXT,
     DESIGNER_NAME_TEXT,
     DESIGNER_WEBSITE_TEXT,
@@ -52,10 +49,23 @@ const Footer = () => {
                 </Box>
                 <Box>
                     <Typography sx={ familyFontCursive } variant="body1">
-                        <strong>{ CONTACT_TEXT }:</strong> { PHONE_NUMBER }
+                        <strong>Geschäftsführer:  Adnan El-Bekai, Bilal Naesah</strong>
                     </Typography>
                     <Typography sx={ familyFontCursive } variant="body1">
-                        <strong>{ ADDRESS_TEXT }:</strong> { ADDRESS_DETAILS_TEXT }
+                        <strong>Sitz der Gesellschaft: Berlin
+                        </strong>
+                    </Typography>
+                    <Typography sx={ familyFontCursive } variant="body1">
+                        <strong>Amtsgericht: Berlin-Charlottenburg
+                        </strong>
+                    </Typography>
+                    <Typography sx={ familyFontCursive } variant="body1">
+                        <strong>Handelsregister: HRB 254164
+                        </strong>
+                    </Typography>
+                    <Typography sx={ familyFontCursive } variant="body1">
+                        <strong>Handnummer: { PHONE_NUMBER }
+                        </strong>
                     </Typography>
                     <Typography sx={ familyFontCursive } variant="body1">
                         <strong>{ EMAIL_TEXT }:</strong>{ " " }
