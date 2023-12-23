@@ -12,10 +12,10 @@ export const images = [
         textTwo: "Professionelle Reinigung, maßgeschneidert auf Ihre Bedürfnisse zu Hause und im Büro",
     },
     {
-        label: "transportation",
+        label: "Car rental entrepreneur",
         imgPath: "person-transportation.jpg",
-        textOne: "Nahtlose Fahrten für Ihren Komfort und Seelenfrieden, wohin Sie auch wollen.",
-        textTwo: "Ihr vertrauenswürdiger Partner für zuverlässige und bedarfsgerechte Transporte, jederzeit und überall.",
+        textOne: "Genießen Sie eine stressfreie Fahrt mit unseren umfassenden Mietwagen-Dienstleistungen.",
+        textTwo: "Beginnen Sie Ihre Reise ohne Probleme mit unserer großen Auswahl an Autos und reibungslosen Mietprozess.",
     },
     {
         label: "logistics",
@@ -36,7 +36,7 @@ export const servicesOverviewData = [
         img: "services-images/logistics-services.jpg",
         title: "Logistik Service",
         description:
-            "Wir bieten eine breite Palette von Logistikdienstleistungen an, von Lagerung und Transport bis hin zu Inventarmanagement und Zollklarierung, um einen nahtlosen und effizienten Lieferprozess zu gewährleisten.",
+            "Wir Transportieren Ihre Ware zum gewünschten Zielort Bundesweit, Erleben Sie die Bequemlichkeit der Tür-zu-Tür-Lieferung mit unserem landesweiten Versandnetz.",
     },
     {
         img: "services-images/security-service.jpg",
@@ -46,10 +46,10 @@ export const servicesOverviewData = [
     },
     {
         img: "person-transportation.jpg",
-        title: "Personenbeförderung",
+        title: "Mietwagen Unternehmer",
         description:
-            "Wir bieten umfassende Personenbeförderungsdienste an, von der Beförderung von Personen mit öffentlichen Verkehrsmitteln bis hin zur Vermittlung von Taxiunternehmen, um Ihnen eine bequeme und sichere Reise zu ermöglichen.",
+            "Wir bieten umfassende Mietwagendienste an, von der Vermittlung von Mietwagenunternehmen bis hin zur Unterstützung bei der Fahrzeugversicherung und -finanzierung, um Ihnen eine bequeme und sichere Reise zu ermöglichen.",
     },
 ];
 
-export const servicesOptions = ["Option 1", "Option 2", "Option 3", "Option 4"];
+
