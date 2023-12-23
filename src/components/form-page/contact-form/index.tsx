@@ -67,8 +67,8 @@ const MyForm: React.FC = () => {
         }));
     };
 
-    const handleSubmit = async (
-        e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (
+        e: React.FormEvent<HTMLFormElement>
     ) => {
         e.preventDefault();
 
@@ -80,6 +80,7 @@ const MyForm: React.FC = () => {
             toast.error(LINKS_NOW_ALLOWED_MESSAGE);
             return;
         }
+
         if (!isEmailValid(formData.email)) {
             toast.error("Please enter a valid email address.");
             return;
@@ -108,7 +109,7 @@ const MyForm: React.FC = () => {
                 phoneNumber: "",
                 service: "",
                 description: "",
-            })
+            });
             toast.success(CONTACT_FORM_SUCCESS_MESSAGE);
             console.log("Email sent successfully", response);
             console.log(templateParams);
@@ -117,10 +118,9 @@ const MyForm: React.FC = () => {
             console.error("Error sending email", error);
         }
     };
-
     return (
         <Box sx={ contactFormMainContainerStyles }>
-            <Box sx={ contactFormStyles } component="form">
+            <Box sx={ contactFormStyles } component="form" onSubmit={ handleSubmit }>
                 <Typography sx={ contactUsTitleStyles } variant="h4">
                     { CONTACT_US_TEXT }
                 </Typography>
@@ -191,7 +191,6 @@ const MyForm: React.FC = () => {
                     type="submit"
                     variant="contained"
                     color="primary"
-                    onClick={ (e) => handleSubmit(e) }
                 >
                     { SEND_REQUEST_TEXT }
                 </Button>
