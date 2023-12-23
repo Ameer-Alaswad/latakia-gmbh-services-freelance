@@ -18,7 +18,7 @@ export const footerGridStyles = {
 };
 export const companyTitleStyles = {
     color: "#ffa726",
-    fontFamily: "cursive, sans-serif",
+    fontFamily: "arial, sans-serif",
     marginLeft: "10px",
     alignSelf: "center"
 };
