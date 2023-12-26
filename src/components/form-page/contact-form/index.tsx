@@ -31,7 +31,8 @@ import {
     SEND_REQUEST_TEXT,
     SERVICE_TEXT,
 } from "../../../assets/text";
-interface FormData {
+import { containsLink, isEmailValid } from "../../utils/utils";
+export interface FormData {
     name: string;
     lastName: string;
     email: string;
@@ -51,13 +52,6 @@ const MyForm: React.FC = () => {
         description: "",
     });
 
-    const isEmailValid = (email: string): boolean => {
-        // Regular expression for basic email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        // Check if the email matches the regular expression
-        return emailRegex.test(email);
-    };
 
 
     const handleChange = (key: keyof FormData, value: string) => {
@@ -72,11 +66,7 @@ const MyForm: React.FC = () => {
     ) => {
         e.preventDefault();
 
-        const containsLink = Object.values(formData).some((value) =>
-            value.toLowerCase().includes("http://") || value.toLowerCase().includes("https://")
-        );
-
-        if (containsLink) {
+        if (containsLink(formData)) {
             toast.error(LINKS_NOW_ALLOWED_MESSAGE);
             return;
         }

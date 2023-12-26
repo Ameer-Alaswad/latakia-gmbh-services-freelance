@@ -31,16 +31,17 @@ export const carouselTextsContainer = {
 }
 
 export const carouselTextOneStyles = {
-    color: "white",
     transition: "opacity 0.5s ease",
     lineHeight: "60px",
     letterSpacing: "0.5px",
     fontSize: "23px",
     fontFamily: "'monospace','Arial', sans-serif",
+    backgroundColor: "rgba(255, 255, 255, 0.5)",
+    padding: "0px 10px",
+    color: "#333333",
     '@media (max-width: 750px)': {
         fontSize: '15px',
     },
-
 }
 export const carouselTextTwoStyles = {
     color: "white",
@@ -48,8 +49,11 @@ export const carouselTextTwoStyles = {
     fontWeight: "bold",
     fontFamily: "'monospace','Arial', sans-serif",
     transition: "opacity 1s ease",
+    textAlign: "center",
+
     '@media (max-width: 750px)': {
-        fontSize: '30px',
+        fontSize: '25px',
+
     },
 }
 export const angebotButtonStyles = {
