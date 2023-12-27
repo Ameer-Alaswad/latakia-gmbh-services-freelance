@@ -14,11 +14,14 @@ import {
     carouselTextsContainer,
     carouselImagesNdTextContainer,
     angebotButtonStyles,
+    carouselTextOneSpanStyles,
 } from "./styles";
 import { ANGEBOT_TEXT, NEXT_TEXT } from "../../assets/text";
 import { useNavigate } from "react-router-dom";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+
+
 
 function SwipeableTextMobileStepper() {
     const navigate = useNavigate();
@@ -59,7 +62,7 @@ function SwipeableTextMobileStepper() {
                             >
                                 <Box sx={ carouselTextsContainer }>
                                     <Typography sx={ carouselTextOneStyles }>
-                                        { step?.textOne }
+                                        <span style={ carouselTextOneSpanStyles }>{ step?.textOne }</span>
                                     </Typography>
                                     <Typography sx={ carouselTextTwoStyles }>
                                         { step?.textTwo }

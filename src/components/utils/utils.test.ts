@@ -49,16 +49,14 @@ describe("Link Detection", () => {
     });
   });
 
-  describe("HTTPS Link", () => {
-    test("Should return true if formData contains a link with https://", () => {
-      const formDataTest: FormData = {
-        ...formData,
-        description: "https://example.com",
-      };
+  test("Should return true if formData contains a link with https://", () => {
+    const formDataTest: FormData = {
+      ...formData,
+      description: "https://example.com",
+    };
 
-      const result = containsLink(formDataTest);
-      expect(result).toBe(true);
-    });
+    const result = containsLink(formDataTest);
+    expect(result).toBe(true);
   });
 
   test("Should return false if formData does not contain a link", () => {

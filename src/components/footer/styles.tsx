@@ -45,4 +45,4 @@ export const designerNameStyles = {
     color: "#bbdefb",
     transition: "color 0.3s",
 };
-export const familyFontCursive = { fontFamily: "cursive, sans-serif" }
+export const familyFontCursive = { fontFamily: "cursive, sans-serif", fontWeight: "bold" }

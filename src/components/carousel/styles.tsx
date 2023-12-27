@@ -36,13 +36,20 @@ export const carouselTextOneStyles = {
     letterSpacing: "0.5px",
     fontSize: "23px",
     fontFamily: "'monospace','Arial', sans-serif",
-    backgroundColor: "rgba(255, 255, 255, 0.5)",
-    padding: "0px 10px",
     color: "#333333",
     '@media (max-width: 750px)': {
         fontSize: '15px',
     },
 }
+export const carouselTextOneSpanStyles = {
+    backgroundColor: "rgba(255, 255, 255, 0.5)",
+    display: 'inline',
+    '-webkit-box-decoration-break': 'clone',
+    'box-decoration-break': 'clone',
+    padding: "10px 15px",
+
+}
+
 export const carouselTextTwoStyles = {
     color: "white",
     fontSize: "50px",

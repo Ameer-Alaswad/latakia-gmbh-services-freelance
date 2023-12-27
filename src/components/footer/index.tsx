@@ -10,19 +10,15 @@ import {
     dividerStyles,
     designedByStyles,
     designerNameStyles,
-    familyFontCursive,
 } from "./styles";
 import {
-    COMPANY_EMAIL,
     DESIGNED_BY_TEXT,
     DESIGNER_NAME_TEXT,
     DESIGNER_WEBSITE_TEXT,
-    EMAIL_TEXT,
     LATAKIA_GMBH,
-    PHONE_NUMBER,
     RIGHTS_RESERVED_TEXT,
-    WEBSITE_OWNER_EMAIL_TEXT,
 } from "../../assets/text";
+import ProductOwnersData from "./ProductOwnersData";
 
 const Footer = () => {
     const matchesMobileSize = useMediaQuery("(max-width:462px)");
@@ -47,33 +43,7 @@ const Footer = () => {
                         { LATAKIA_GMBH }
                     </Typography>
                 </Box>
-                <Box>
-                    <Typography sx={ familyFontCursive } variant="body1">
-                        <strong>Geschäftsführer:  Adnan El-Bekai, Bilal Naesah</strong>
-                    </Typography>
-                    <Typography sx={ familyFontCursive } variant="body1">
-                        <strong>Sitz der Gesellschaft: Berlin
-                        </strong>
-                    </Typography>
-                    <Typography sx={ familyFontCursive } variant="body1">
-                        <strong>Amtsgericht: Berlin-Charlottenburg
-                        </strong>
-                    </Typography>
-                    <Typography sx={ familyFontCursive } variant="body1">
-                        <strong>Handelsregister: HRB 254164
-                        </strong>
-                    </Typography>
-                    <Typography sx={ familyFontCursive } variant="body1">
-                        <strong>Handnummer: { PHONE_NUMBER }
-                        </strong>
-                    </Typography>
-                    <Typography sx={ familyFontCursive } variant="body1">
-                        <strong>{ EMAIL_TEXT }:</strong>{ " " }
-                        <Link href={ WEBSITE_OWNER_EMAIL_TEXT } sx={ { color: "#bbdefb" } }>
-                            { COMPANY_EMAIL }
-                        </Link>
-                    </Typography>
-                </Box>
+                <ProductOwnersData />
                 <Box sx={ { flex: 1 } }>
                 </Box>
             </Box>
