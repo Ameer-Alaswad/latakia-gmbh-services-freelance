@@ -46,3 +46,11 @@ export const designerNameStyles = {
     transition: "color 0.3s",
 };
 export const familyFontCursive = { fontFamily: "cursive, sans-serif", fontWeight: "bold" }
+
+export const productLogoTitleContainerStyles = {
+    flex: 1.1,
+    display: "flex",
+    "@media (max-width: 639px)": {
+        marginBottom: "20px",
+    },
+}
