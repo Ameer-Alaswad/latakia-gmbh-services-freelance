@@ -9,7 +9,7 @@ import {
 import ProductOwnersData from "./ProductOwnersData";
 import ProductLogoTitle from "./ProductLogoTitle";
 import AllRightReserved from "./AllRightReserved";
-import DevelopedBy from "./DevelopedBy";
+import DevelopedBy from "./developed-by";
 
 const Footer = () => {
 

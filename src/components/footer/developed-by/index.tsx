@@ -1,6 +1,6 @@
 import { Link, Typography } from "@mui/material"
-import { designedByStyles, designerNameStyles } from "./styles"
-import { DESIGNED_BY_TEXT, DESIGNER_NAME_TEXT, DESIGNER_WEBSITE_TEXT } from "../../assets/text"
+import { designedByStyles, designerNameStyles } from "../styles"
+import { DESIGNED_BY_TEXT, DESIGNER_NAME_TEXT, DESIGNER_WEBSITE_TEXT } from "../../../assets/text"
 
 const DevelopedBy = () => {
     return (
