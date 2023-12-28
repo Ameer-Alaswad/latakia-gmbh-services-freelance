@@ -19,7 +19,7 @@ export const images = [
     },
     {
         label: "logistics",
-        imgPath: "logistics.jpg",
+        imgPath: "Logistics-service.jpg",
         textOne: "Effiziente Lösungen für Ihre Logistikanforderungen",
         textTwo: "Wir liefern Ihre Waren jederzeit sicher und pünktlich",
     },

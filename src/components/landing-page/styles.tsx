@@ -33,4 +33,4 @@ export const dividerStyles = {
     margin: "20px 0",
     backgroundColor: "blue",
 }
-export const requestTitleTextStyles = { fontFamily: "'monospace','Arial', sans-serif", }
+export const requestTitleTextStyles = { fontFamily: "'monospace','Arial', sans-serif", textAlign: "center" }

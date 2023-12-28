@@ -1,9 +1,17 @@
-import { ANGEBOT_TEXT } from "../../assets/text";
+import {
+    ANGEBOT_TEXT,
+    IF_YOU_ARE_INTERESTED_BUTTON_TEXT,
+} from "../../assets/text";
 import SwipeableTextMobileStepper from "../carousel";
 import TitlebarBelowImageList from "../services-overview";
 import { Button, Box, Typography, Divider } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { dividerStyles, requestServiceButtonStyles, requestServiceContainerStyles, requestTitleTextStyles } from "./styles";
+import {
+    dividerStyles,
+    requestServiceButtonStyles,
+    requestServiceContainerStyles,
+    requestTitleTextStyles,
+} from "./styles";
 
 const LandingPage = () => {
     const navigate = useNavigate();
@@ -12,11 +20,9 @@ const LandingPage = () => {
         <div>
             <SwipeableTextMobileStepper />
             <TitlebarBelowImageList />
-            <Box
-                sx={ requestServiceContainerStyles }
-            >
-                <Typography sx={ { requestTitleTextStyles } } variant="h4">
-                    Bei Interesse klicken Sie auf den Button
+            <Box sx={ requestServiceContainerStyles }>
+                <Typography sx={ requestTitleTextStyles } variant="h4">
+                    { IF_YOU_ARE_INTERESTED_BUTTON_TEXT }
                 </Typography>
                 <Divider sx={ dividerStyles } />
                 <Button
