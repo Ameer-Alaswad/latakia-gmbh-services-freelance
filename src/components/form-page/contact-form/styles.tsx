@@ -18,6 +18,7 @@ export const contactFormStyles = {
 }
 
 export const contactUsTitleStyles = {
+    textAlign: "center",
     color: "#303030",
     fontFamily: "'monospace','Arial', sans-serif",
     fontWeight: "bold",
