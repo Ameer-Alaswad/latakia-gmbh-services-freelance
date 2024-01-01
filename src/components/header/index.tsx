@@ -1,4 +1,4 @@
-import { AppBar, Box, Toolbar, Typography, Button } from "@mui/material";
+import { AppBar, Box, Toolbar, Button } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import { useNavigate } from 'react-router-dom';
@@ -7,9 +7,9 @@ import {
     headerStyles,
     headerTransplantStyles,
     navbarContentContainer,
-    projectTitleStyles,
 } from "./styles";
-import { CONTACT_US_TEXT_IN_HEADER, HOME_TEXT, LATAKIA_GMBH } from "../../assets/text";
+import { CONTACT_US_TEXT_IN_HEADER, HOME_TEXT, } from "../../assets/text";
+import LogoTitle from "./LogoTitle";
 
 const ButtonAppBar = () => {
     const navigate = useNavigate();
@@ -26,22 +26,7 @@ const ButtonAppBar = () => {
                 position="fixed"
             >
                 <Toolbar sx={ navbarContentContainer }>
-                    <Box
-                        component="img"
-                        sx={ matchesMobileSize ? { width: "50px" } : { width: "80px" } }
-                        src="project-image.jpg"
-                        alt="project-logo"
-                    />
-                    <Typography
-                        sx={
-                            matchesMobileSize
-                                ? projectTitleStyles
-                                : { fontSize: "24px", }
-                        }
-                        component="div"
-                    >
-                        { LATAKIA_GMBH }
-                    </Typography>
+                    <LogoTitle />
                     <Box>
                         <Button onClick={ () => navigate("/") } sx={
                             matchesMobileSize
