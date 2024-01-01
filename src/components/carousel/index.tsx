@@ -1,18 +1,19 @@
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
-import { Box, } from "@mui/material";
+import { Box } from "@mui/material";
+
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import { images } from "../../assets";
 
+import { useNavigate } from "react-router-dom";
 import CarouselItem from "./CarouselItem";
 import MobileNavigation from "./MobileNavigation";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-
-
 function SwipeableTextMobileStepper() {
+    const navigate = useNavigate();
 
     const theme = useTheme();
     const [activeStep, setActiveStep] = React.useState(0);
@@ -34,8 +35,9 @@ function SwipeableTextMobileStepper() {
         maxSteps: maxSteps,
         handleNext: handleNext,
         handleBack: handleBack,
-        theme: theme
-    }
+        theme: theme,
+    };
+
     return (
         <Box sx={ { flexGrow: 1 } }>
             <AutoPlaySwipeableViews
@@ -45,11 +47,19 @@ function SwipeableTextMobileStepper() {
                 enableMouseEvents
                 interval={ 10000 }
             >
-                <CarouselItem activeStep={ activeStep } />
+                { images.map((step, index) => {
+                    const carouselItemProps = {
+                        key: index,
+                        step: step,
+                        activeStep: activeStep,
+                        index,
+                        navigate: () => navigate("/contact-us"),
+                    };
+
+                    return <CarouselItem { ...carouselItemProps } />;
+                }) }
             </AutoPlaySwipeableViews>
-            <MobileNavigation
-                { ...mobileNavigationProps }
-            />
+            <MobileNavigation { ...mobileNavigationProps } />
         </Box>
     );
 }
