@@ -17,7 +17,7 @@ interface CarouselItemProps {
 
 const CarouselItem: React.FC<CarouselItemProps> = ({ step, activeStep, index, navigate }) => {
     return (
-        <div key={ step.label }>
+        <div key={ step?.label }>
             { Math.abs(activeStep - index) <= 2 ? (
                 <Box
                     sx={ {
