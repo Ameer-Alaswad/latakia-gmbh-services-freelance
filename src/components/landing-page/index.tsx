@@ -1,6 +1,5 @@
 
 import SwipeableTextMobileStepper from "../carousel";
-import TitlebarBelowImageList from "../services-overview";
 import { Box, Divider } from "@mui/material";
 import {
     dividerStyles,
@@ -8,13 +7,14 @@ import {
 } from "./styles";
 import UserInterestedTitle from "./UserInterestedTitle";
 import RequestServiceButton from "./RequestServiceButton";
+import ServicesOverviewList from "../services-overview";
 
 const LandingPage = () => {
 
     return (
         <Box>
             <SwipeableTextMobileStepper />
-            <TitlebarBelowImageList />
+            <ServicesOverviewList />
             <Box sx={ requestServiceContainerStyles }>
                 <UserInterestedTitle />
                 <Divider sx={ dividerStyles } />

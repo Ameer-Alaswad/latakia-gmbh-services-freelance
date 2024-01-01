@@ -1,4 +1,4 @@
-import { FormData } from "../form-page/contact-form";
+import { FormData } from "../form-page/contact-form/Types";
 
 export const containsLink = (formData: FormData): boolean => {
     const descriptionValue = formData.description.toLowerCase();
