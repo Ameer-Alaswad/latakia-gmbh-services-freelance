@@ -1,4 +1,4 @@
-# Latakia GmbH Website
+# Latakia GmbH Website (Freelance)
 
 ## Introduction
 
@@ -33,3 +33,8 @@ We have implemented unit tests for some components using Jest. To run the tests,
 
 ```bash
 npm run test
+```
+
+Deployed Website
+The live version of the website is hosted on Netlify. You can access it by clicking here.
+
