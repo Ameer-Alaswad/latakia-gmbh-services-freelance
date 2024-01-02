@@ -36,5 +36,5 @@ npm run test
 ```
 
 ## Deployed Website
-The live version of the website is hosted on Netlify. You can access it by clicking [here](URL).
+The live version of the website is hosted on Netlify. You can access it by clicking [here](https://latakia-gmbh.netlify.app/).
 
