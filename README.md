@@ -40,6 +40,5 @@ The live version of the website is hosted on Netlify. You can access it by click
 
 ## Some Images
 
-![](![carousel-readme](https://github.com/Ameer-Alaswad/Freelance-App/assets/17381734/9ed8970c-81f4-490e-885f-a68a60fbb481)
-)
+![](https://github.com/Ameer-Alaswad/Freelance-App/assets/17381734/9ed8970c-81f4-490e-885f-a68a60fbb481)
 
