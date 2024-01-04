@@ -40,5 +40,15 @@ The live version of the website is hosted on Netlify. You can access it by click
 
 ## Some Images
 
+![Home-page](https://github.com/Ameer-Alaswad/Freelance-App/assets/17381734/84cfc156-09f6-44ee-a8c4-fe6ad6a52e72)
+![Offered Services](https://github.com/Ameer-Alaswad/Freelance-App/assets/17381734/725c1935-aa54-4c3d-b8a5-cedc97e2d058)
+![Service Request](https://github.com/Ameer-Alaswad/Freelance-App/assets/17381734/7cc28ac5-7b60-4c85-9b3b-2c3899834d03)
+![Contact us!](https://github.com/Ameer-Alaswad/Freelance-App/assets/17381734/9507deb2-388c-43a1-a655-29221e2de9ad)
+![](https://github.com/Ameer-Alaswad/Freelance-App/assets/17381734/7f49d007-4b84-4fa6-99c0-e55dc51dd0e2)
+
+
+
+## Some Images
+
 ![](https://github.com/Ameer-Alaswad/Freelance-App/assets/17381734/9ed8970c-81f4-490e-885f-a68a60fbb481)
 
