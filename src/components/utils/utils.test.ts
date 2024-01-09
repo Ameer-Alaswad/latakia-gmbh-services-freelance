@@ -1,4 +1,4 @@
-import { FormData } from "../form-page/contact-form";
+import { FormData } from "../form-page/contact-form/Types";
 import { containsLink, isEmailValid } from "./utils";
 
 describe("Email Validation", () => {
