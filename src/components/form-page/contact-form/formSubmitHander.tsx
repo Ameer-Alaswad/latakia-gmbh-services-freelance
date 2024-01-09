@@ -9,6 +9,16 @@ import {
 } from "../../../assets/text";
 import { containsLink, isEmailValid } from "../../utils/utils";
 
+
+const SERVICE_KEY: string | undefined = import.meta.env.VITE_SERVICE_ID;
+const TEMPLATE_KEY: string | undefined = import.meta.env.VITE_TEMPLATE_ID;
+const ACCOUNT_KEY: string | undefined = import.meta.env.VITE_PUBLIC_KEY;
+
+if (!SERVICE_KEY || !TEMPLATE_KEY || !ACCOUNT_KEY) {
+    throw new Error("Missing required environment variables.");
+}
+
+
 interface FormData {
     name: string;
     lastName: string;
@@ -43,10 +53,10 @@ export const handleSubmit = async (
 
     try {
         const response = await emailjs.send(
-            "service_56p4lg1",
-            "template_8d22j08",
+            SERVICE_KEY,
+            TEMPLATE_KEY,
             templateParams,
-            "WpgTXMD0k0R12bTnt"
+            ACCOUNT_KEY
         );
         setFormData({
             name: "",
