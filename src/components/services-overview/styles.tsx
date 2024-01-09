@@ -41,3 +41,7 @@ export const serviceImageDescriptionStyles = {
     letterSpacing: "0.1em",
     lineHeight: "1.5",
 };
+export const imageListItemStyles = {
+    margin: "30px",
+    width: "350px",
+} 
