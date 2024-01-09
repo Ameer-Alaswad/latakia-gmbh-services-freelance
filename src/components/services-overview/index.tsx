@@ -1,7 +1,5 @@
-
 import { Box, Divider, Typography } from "@mui/material";
 import {
-
     servicesImagesListMainContainerStyles,
     servicesTitleStyles,
 } from "./styles";
@@ -10,7 +8,6 @@ import { dividerStyles } from "../landing-page/styles";
 import ServicesListItems from "./ServicesListItems";
 
 export default function ServicesOverviewList() {
-
     return (
         <Box sx={ servicesImagesListMainContainerStyles }>
             <Typography sx={ servicesTitleStyles }>{ SERVICES_TITLE_TEXT }</Typography>
