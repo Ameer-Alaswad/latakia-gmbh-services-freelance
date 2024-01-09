@@ -1,3 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <root>
-<row Address="https://latakia-gmbh.netlify.app/" Content_Type="text/html; charset=UTF-8" Status_Code="200" Status="OK" Indexability="Indexable" Indexability_Status=""/>
+  <row>
+    <Address>https://latakia-gmbh.netlify.app/</Address>
+    <ContentType>text/html; charset=UTF-8</ContentType>
+    <StatusCode>200</StatusCode>
+    <Status>OK</Status>
+    <Indexability>Indexable</Indexability>
+    <IndexabilityStatus></IndexabilityStatus>
+  </row>
 </root>
