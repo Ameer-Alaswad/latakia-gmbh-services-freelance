@@ -26,6 +26,8 @@ This project is built with a modern and robust tech stack, featuring:
 - **Jest**: A JavaScript testing framework for writing unit tests with a focus on simplicity and speed.
 - **EmailJS**: A service that allows you to send emails directly from your JavaScript code using your own email templates.
 - **Vite**: A build tool that provides a fast development server and efficient bundling, enhancing the speed and simplicity of web development.
+- **Sentry**: An error tracking and monitoring tool to identify and resolve issues in real-time, ensuring a smooth user experience.
+
 
 ## Running Tests
 
