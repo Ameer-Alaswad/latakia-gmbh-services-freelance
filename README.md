@@ -4,6 +4,9 @@
 
 Welcome to the Latakia GmbH React TypeScript project! This freelance project aims to provide an online presence for Latakia GmbH, a versatile company offering security, logistics, and cleaning services. This website serves as a landing page for potential clients to learn about the company's diverse range of services and easily request assistance through the contact form.
 
+## Deployed Website
+The live version of the website is hosted on Netlify. You can access it by clicking [here](https://latakia-gmbh.netlify.app/).
+
 ## Getting Started
 
 To run the project locally, follow these simple steps:
@@ -31,14 +34,11 @@ This project is built with a modern and robust tech stack, featuring:
 
 ## Running Tests
 
-We have implemented unit tests for some components using Jest. To run the tests, use the following command:
+We have implemented unit tests for some functions using Jest. To run the tests, use the following command:
 
 ```bash
 npm run test
 ```
-
-## Deployed Website
-The live version of the website is hosted on Netlify. You can access it by clicking [here](https://latakia-gmbh.netlify.app/).
 
 ## Some Images
 
