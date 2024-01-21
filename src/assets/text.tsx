@@ -32,4 +32,4 @@ export const COMPANY_OWNERS_NAMES = "Geschäftsführer:  Adnan El-Bekai, Bilal N
 export const HEADQUARTER_OF_THE_COMPANY = "Sitz der Gesellschaft: Berlin"
 export const DISTRICT_AREA = "Amtsgericht: Berlin-Charlottenburg"
 export const COMMERCIAL_REGISTER = "Handelsregister: HRB 254164"
-export const MOBILEnUMBER = "Handnummer"
+export const MOBILEnUMBER = "Handynummer"
